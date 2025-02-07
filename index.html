@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Template</title>
+    
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Preloader (Black Background with Logo) */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #preloader img {
+            width: 500px; /* Adjust logo size */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+        }
+
+        nav a:hover {
+            background-color: #ddd9d9;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            min-width: 150px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader with Logo -->
+    <div id="preloader">
+        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
+    </div>
+
+    <!-- Header and Main Content -->
+    <header>
+        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="resources.html">Resources ▼</a>
+                    <div class="dropdown-content">
+                        <a href="buyers.html">Buyers</a>
+                        <a href="sellers.html">Sellers</a>
+                        <a href="investors.html">Investors</a>
+                    </div>
+                </li>
+                <li><a href="mls.html">MLS</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+        <p></p>
+    </main>
+
+    <footer>
+        <p>© 2025 HomesByMilledge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener("load", () => {
+            gsap.to("#preloader img", {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                delay: 1.5, // Delay for the fade-in effect
+            });
+
+            gsap.to("#preloader", {
+                duration: 1,
+                y: "-100%", // Swipe up animation
+                ease: "power2.inOut",
+                delay: 2, // Wait until the logo fade-in completes
+            });
+        });
+    </script>
+
+</body>
+</html>
 
