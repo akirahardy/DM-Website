@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
+
+Adobe Garamond Pro Regular
+font-family: "adobe-garamond-pro", serif;
+font-weight: 400;
+font-style: normal;
+Adobe Garamond Pro Italic
+font-family: "adobe-garamond-pro", serif;
+font-weight: 400;
+font-style: italic;
+Adobe Garamond Pro Semibold
+font-family: "adobe-garamond-pro", serif;
+font-weight: 600;
+font-style: normal;
+Adobe Garamond Pro Semibold Italic
+font-family: "adobe-garamond-pro", serif;
+font-weight: 600;
+font-style: italic;
+Adobe Garamond Pro Bold
+font-family: "adobe-garamond-pro", serif;
+font-weight: 700;
+font-style: normal;
+Adobe Garamond Pro Bold Italic
+font-family: "adobe-garamond-pro", serif;
+font-weight: 700;
+font-style: italic;
