@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template</title>
+    <link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
+    <title>Contact</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: "adobe-garamond-pro", serif;
         }
 
         /* Header & Navbar */
@@ -53,7 +53,108 @@
             border-radius: 5px;
         }
 
-        /* Dropdown Menu */
+        /* Hero Section */
+        .hero {
+            background: url('contact-hero.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 200px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        /* Contact Info and Form Column Layout */
+        .contact-info,
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+        }
+
+        /* Dropdown Menu for Resources */
         .dropdown {
             position: relative;
         }
@@ -83,25 +184,22 @@
             display: block;
         }
 
-        /* Main Content */
-        main {
-            padding: 40px 20px;
-            text-align: center;
-        }
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #f4f4f4;
-            margin-top: 20px;
+            .contact-form {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="dmlogo.jpg" alt="Logo">
+        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -121,10 +219,31 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Template</h1>
-        <p>Use this to create your page.</p>
-    </main>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Contact Darryl</h1>
+        <p>I'd love to hear from you! Reach out to me with any questions.</p>
+    </div>
+
+    <!-- Contact Information Section and Form -->
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> darryl@sunshinerealtyandco.com</p>
+            <p><strong>Phone:</strong> (904) 705-8801</p>
+            <p><strong>Address:</strong> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Me a Message</h2>
+            <form action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>© 2025 HomesByMilledge. All rights reserved.</p>
@@ -132,4 +251,3 @@
 
 </body>
 </html>
-
