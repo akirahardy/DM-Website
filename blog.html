@@ -176,17 +176,17 @@
     </footer>
 
     <script>
-        async function fetchRSSFeed() {
-            const apiKey = "lajs7liuyboslszljihozisdulo0lc11jdok7c08";
+        async function fetchRSSFeed() { // fetch function calls the RSS to JSON API
+            const apiKey = "lajs7liuyboslszljihozisdulo0lc11jdok7c08"; 
             const rssUrl = "https://www.floridarealtors.org/news-media/rss.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}`;
 
             try {
-                const response = await fetch(apiUrl);
-                const data = await response.json();
+                const response = await fetch(apiUrl); // makes request to API
+                const data = await response.json(); // converts the API response in s JS object
 
                 if (data.status === "ok") {
-                    const articles = data.items.slice(0, 9); // Get latest 9 articles
+                    const articles = data.items.slice(0, 9); // gets the latest 9 articles
                     const blogGrid = document.getElementById("blog-grid");
                     blogGrid.innerHTML = ""; // Clears loading text
 
