@@ -117,6 +117,33 @@
             margin: auto;
         }
 
+        /* Spotlight Article */
+        .spotlight-article {
+            display: flex;  /* Align image and text side by side */
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .spotlight-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .spotlight-image {
+            width: 250px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .spotlight-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Blog Cards */
         .blog-card {
             background: white;
@@ -124,15 +151,10 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-            text-align: center;
+            text-align: left;  /* Align text to the left */
         }
 
-        .blog-card h2 {
-            margin: 15px 0 10px;
-            font-size: 1.5rem;
-        }
-
-        .blog-card p {
+        .description {
             color: #555;
         }
 
@@ -179,9 +201,21 @@
         <p>Your ultimate guide to real estate trends, tips, and insights</p>
     </div>
 
+    <!-- Spotlight Article Section -->
+    <section class="spotlight-article">
+        <div class="spotlight-info">
+            <h2>Understanding the Foreclosure Process: A Step-by-Step Guide</h2>
+            <p class="description">The foreclosure process is a complex legal procedure. In this article, we break it down into simple steps to help you understand what happens when a homeowner falls behind on mortgage payments.</p>
+            <a href="https://www.investopedia.com/financial-edge/0510/the-6-phases-of-a-foreclosure.aspx?.com" target="_blank">Read Full Article</a>
+        </div>
+        <div class="spotlight-image">
+            <img src="https://www.investopedia.com/thmb/lSpTkmUR_pERFKckdOkFgWLbcNM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-525970608-6b70b046db98446fb9af36003e5cea63.jpg" alt="Foreclosure Process">
+        </div>
+    </section>
+
     <!-- Blog Grid Section -->
     <section class="blog-grid" id="blog-grid">
-        <p>Loading articles...</p>
+		<p>Loading articles...</p>
     </section>
 
     <footer>
@@ -208,9 +242,11 @@
                         articleCard.classList.add("blog-card");
 
                         articleCard.innerHTML = `
-                            <h2>${article.title}</h2>
-                            <p>${article.description.slice(0, 100)}...</p>
-                            <a href="${article.link}" target="_blank">Read More</a>
+                            <div class="blog-info">
+                                <h2>${article.title}</h2>
+                                <p class="description">${article.description.slice(0, 100)}...</p>
+                                <a href="${article.link}" target="_blank">Read More</a>
+                            </div>
                         `;
 
                         blogGrid.appendChild(articleCard);
