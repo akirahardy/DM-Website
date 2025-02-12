@@ -19,7 +19,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Preloader (Black Background with Logo) */
+        /* Preloader */
         #preloader {
             position: fixed;
             width: 100%;
@@ -32,9 +32,9 @@
         }
 
         #preloader img {
-            width: 500px; /* Adjust logo size */
-            opacity: 0; /* Start hidden */
-            animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+            width: 500px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
         }
 
         @keyframes fadeIn {
@@ -42,7 +42,7 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* Header & Navbar */
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -109,31 +109,181 @@
             display: block;
         }
 
-        /* Main Content */
-        main {
-            padding: 40px 20px;
+        #slideshow {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateY(-10%);
+        }
+
+        .slides img:nth-child(2) {
+            transform: translateY(-25%);
+        }
+
+        .slides img:nth-child(1) {
+            transform: translateY(-8%);
+        }
+
+        /* Text Overlays */
+        .text-overlay {
+            position: absolute;
+            bottom: 45%;
+            right: 5%;
+            left: auto;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 50%;
+            text-align: right;
+            z-index: 1;
+            display: none;
+            font-size: 18px;
+        }
+
+        .second {
+            display: none;
+        }
+
+        .third {
+            display: none;
+        }
+
+        .slides img:nth-child(1).active + .text-overlay {
+            display: block;
+        }
+
+        .slides img:nth-child(2).active + .text-overlay.second {
+            display: block;
+        }
+
+        .slides img:nth-child(3).active + .text-overlay.third {
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: white;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #cc5500;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .why-choose-us h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .why-choose-us .features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 280px;
             text-align: center;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #f4f4f4;
-            margin-top: 20px;
+        .feature img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
         }
+
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .why-choose-us .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+/* LinkedIn Icon Styling */
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+/* LinkedIn Icon Styling */
+.linkedin-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.linkedin-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.1);
+}
+
     </style>
 </head>
 <body>
 
-    <!-- Preloader with Logo -->
+    <!-- Preloader -->
     <div id="preloader">
-        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
+        <img src="C:\Users\solop\Pictures\Home Page Pics\DM-logo.jpeg" alt="Logo">
     </div>
 
-    <!-- Header and Main Content -->
+    <!-- Header -->
     <header>
-        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
+        <img src="C:\Users\solop\Pictures\Home Page Pics\DM-logo.jpeg" alt="Logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -153,33 +303,118 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Home</h1>
-        <p></p>
-    </main>
+    <!-- Slideshow Gallery -->
+    <div id="slideshow">
+        <div class="slides">
+            <img src="C:\Users\solop\Pictures\Home Page Pics\Slideshow Luxury House.jpg">
+            <img src="C:\Users\solop\Pictures\Home Page Pics\Slideshow-luxury-living-room.jpg" alt="Image 2">
+            <img src="C:\Users\solop\Pictures\Home Page Pics\Slideshow Luxury Pool House.jpg" alt="Luxury Pool House">
+        </div>
+        
+        <!-- Existing Overlays -->
+        <div class="text-overlay">
+            <h2>Finding Your Perfect Home</h2>
+            <p>Struggling to navigate the real estate market? Our expert team is here to guide you through every step of the process, helping you find the home of your dreams. Whether you're a first-time buyer or looking for your next investment, we provide personalized support tailored to your needs.</p>
+            <a href="properties.html" class="cta-button">View Properties</a>
+        </div>
+        
+        <div class="text-overlay second">
+            <h2>A Seamless Real Estate Experience</h2>
+            <p>Our platform is designed to connect buyers, sellers, and investors with expert guidance and resources. We streamline the process, making it easier for you to make informed decisions in the fast-paced real estate market. Start your journey with us today!</p>
+            <a href="resources.html" class="cta-button">Explore Resources</a>
+        </div>
 
-    <footer>
-        <p>© 2025 HomesByMilledge. All rights reserved.</p>
-    </footer>
+        <!-- New Blog Overlay -->
+        <div class="text-overlay third">
+            <h2>Stay Informed with Expert Insights</h2>
+            <p>Get the latest real estate trends, market updates, and expert advice to make confident decisions. Our blog offers in-depth articles on market analysis, investment strategies, and the home buying process, keeping you well-informed every step of the way.</p>
+            <a href="blog.html" class="cta-button">Read the Blog</a>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="features">
+            <div class="feature">
+                <img src="C:\Users\solop\Pictures\Home Page Pics\Guidance Icon.jpg" alt="Expert Guidance">
+                <h3>Expert Guidance</h3>
+                <p>Professional guidance is offered to ensure informed decisions are made at every step.</p>
+            </div>
+            <div class="feature">
+                <img src="C:\Users\solop\Pictures\Home Page Pics\Service Icon.jpg" alt="Personalized Service">
+                <h3>Personalized Service</h3>
+                <p>The approach is customized to meet unique needs, providing a truly personalized real estate experience.</p>
+            </div>
+            <div class="feature">
+                <img src="C:\Users\solop\Pictures\Home Page Pics\Home Icon.jpg" alt="Wide Range of Properties">
+                <h3>Wide Range of Properties</h3>
+                <p>We offer an extensive selection of homes, ensuring you find the perfect property that fits your requirements.</p>
+            </div>
+        </div>
+    </section>
+
+<footer>
+    <p>© 2025 HomesByMilledge. All rights reserved.</p>
+
+    <!-- LinkedIn Icon Link -->
+    <div class="linkedin-section">
+        <a href="https://www.linkedin.com/company/your-company-link" target="_blank">
+            <img src="C:\Users\solop\Pictures\Home Page Pics\Linked In Icon.png" alt="LinkedIn" class="linkedin-icon">
+        </a>
+    </div>
+</footer>
+
 
     <script>
         window.addEventListener("load", () => {
+            // Set the first slide and its overlay to be active when the page loads
+            const firstSlide = document.querySelector(".slides img:nth-child(1)");
+            firstSlide.classList.add("active");
+            const firstOverlay = document.querySelector(".text-overlay");
+            firstOverlay.style.display = "block";
+
+            // Preloader animation (existing)
             gsap.to("#preloader img", {
                 opacity: 1,
                 scale: 1,
                 duration: 1,
-                delay: 1.5, // Delay for the fade-in effect
+                delay: 1.5,
             });
 
             gsap.to("#preloader", {
                 duration: 1,
-                y: "-100%", // Swipe up animation
+                y: "-100%",
                 ease: "power2.inOut",
-                delay: 2, // Wait until the logo fade-in completes
+                delay: 2,
             });
         });
+
+        // Slideshow Functionality
+        let currentIndex = 0;
+        const slides = document.querySelector(".slides");
+        const totalSlides = slides.children.length;
+        const overlays = document.querySelectorAll(".text-overlay");
+
+        function showSlide(index) {
+            const offset = -index * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+
+            // Remove active class from all slides and overlays
+            const allSlides = slides.querySelectorAll("img");
+            allSlides.forEach(slide => slide.classList.remove("active"));
+
+            overlays.forEach(overlay => overlay.style.display = "none");
+
+            // Add active class to the current slide and display the respective overlay
+            allSlides[index].classList.add("active");
+            overlays[index].style.display = "block";
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }, 8000);
     </script>
 
 </body>
 </html>
-
