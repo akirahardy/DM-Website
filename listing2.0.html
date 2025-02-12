@@ -155,7 +155,7 @@
 
         // Fetch properties from backend & display them
         async function fetchPropertiesAndAddMarkers() {
-            const url = `http://localhost:5001/api/properties`; // Calls the local backend
+            const url = `https://dm-website.onrender.com/api/properties`;
 
             try {
                 const response = await fetch(url);
@@ -182,7 +182,8 @@
 
             properties.forEach(property => {
                 const placeholderImage = "https://via.placeholder.com/400x200?text=No+Image+Available"; 
-                const imageUrl = property.image_url ? property.image_url : placeholderImage;
+                const imageUrl = property.image_url ? property.image_url : "https://via.placeholder.com/400x200?text=No+Image+Available";
+
 
                 const propertyCard = document.createElement('div');
                 propertyCard.className = 'property-card';
