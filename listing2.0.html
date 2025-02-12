@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings | HomesByMilledge</title>
+    <link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "adobe-garamond-pro", serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+        }
+
+        nav a:hover {
+            background-color: #ddd9d9;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .property-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            padding: 15px;
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .property-details h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .contact-btn {
+            display: block;
+            text-align: center;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/DM-logo.jpeg" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="mls.html">MLS</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Property Listings</h1>
+        <p>Browse the latest properties available for sale.</p>
+        <div class="property-grid" id="property-list"></div>
+        <div id="map"></div>
+    </main>
+
+    <footer>
+        <p>© 2025 HomesByMilledge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let map;
+
+        // Initialize Google Maps
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 30.3322, lng: -81.6557 }, // Jacksonville, FL
+                zoom: 12,
+            });
+
+            fetchPropertiesAndAddMarkers();
+        }
+
+        // Fetch properties from backend & display them
+        async function fetchPropertiesAndAddMarkers() {
+            const url = `http://localhost:5001/api/properties`; // Calls the local backend
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                console.log("📡 API Response:", data);
+
+                if (data.length > 0) {
+                    displayProperties(data);
+                    addMapMarkers(data);
+                } else {
+                    alert('No properties found in Jacksonville, FL.');
+                    console.warn('No properties found:', data);
+                }
+            } catch (error) {
+                console.error('❌ Error fetching property data:', error);
+                alert('An error occurred while fetching property data.');
+            }
+        }
+
+        // Display properties on the webpage
+        function displayProperties(properties) {
+            const propertyList = document.getElementById('property-list');
+            propertyList.innerHTML = ''; // Clear old results
+
+            properties.forEach(property => {
+                const placeholderImage = "https://via.placeholder.com/400x200?text=No+Image+Available"; 
+                const imageUrl = property.image_url ? property.image_url : placeholderImage;
+
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+
+                propertyCard.innerHTML = `
+                    <img src="${imageUrl}" alt="Property Image">
+                    <div class="property-details">
+                        <h2>${property.formattedAddress}</h2>
+                        <p class="price">$${property.price.toLocaleString()} USD</p>
+                        <p>${property.propertyType} | ${property.bedrooms ? property.bedrooms + " Beds" : ''} ${property.bathrooms ? '| ' + property.bathrooms + " Baths" : ''}</p>
+                        <p>Listed on: ${new Date(property.listedDate).toLocaleDateString()}</p>
+                        <p>MLS Number: ${property.mlsNumber}</p>
+                        <p>Agent: ${property.listingAgent.name} | ${property.listingAgent.phone}</p>
+                        <a href="mailto:${property.listingAgent.email}" class="contact-btn">Contact Agent</a>
+                    </div>
+                `;
+
+                propertyList.appendChild(propertyCard);
+            });
+        }
+
+        // Add markers to Google Maps for each property
+        function addMapMarkers(properties) {
+            properties.forEach(property => {
+                const marker = new google.maps.Marker({
+                    position: { lat: property.latitude, lng: property.longitude },
+                    map: map,
+                    title: property.formattedAddress
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<strong>${property.formattedAddress}</strong><br>Price: $${property.price.toLocaleString()}`
+                });
+
+                marker.addListener("click", () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+
+        window.onload = fetchPropertiesAndAddMarkers;
+    </script>
+
+    <!-- Google Maps API with Your API Key -->
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVCVXNvLFT3SBXNRqSw9a5fFawvDjwNTY&callback=initMap">
+    </script>
+
+</body>
+</html>
