@@ -78,7 +78,7 @@
 
         /* Hero Section */
         .hero {
-            background: url('C:/Users/hmari/OneDrive/Desktop/DMWebsite/blog-hero.jpg') no-repeat center center/cover;
+            background: url('blog-hero.jpg');
             color: white;
             text-align: center;
             padding: 200px 20px;
@@ -107,10 +107,9 @@
             z-index: -1;
         }
 
-        /* Blog Grid */
+        /* Blog Grid - Modified to list layout */
         .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: block;  /* Changes from grid to block layout */
             gap: 20px;
             padding: 40px;
             max-width: 1200px;
@@ -152,10 +151,18 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
             text-align: left;  /* Align text to the left */
+            margin-bottom: 20px;
+        }
+
+        .blog-card h2 {
+            font-size: 1.8rem;  /* Increased font size */
+            font-weight: bold;  /* Made the title bolder */
         }
 
         .description {
             color: #555;
+            font-size: 1.2rem;  /* Increased font size */
+            font-weight: bold;  /* Made the description bolder */
         }
 
         /* Hover Effect */
@@ -175,7 +182,7 @@
 <body>
 
     <header>
-        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
+        <img src="DM-logo.jpeg" alt="Logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -187,7 +194,7 @@
                         <a href="investors.html">Investors</a>
                     </div>
                 </li>
-                <li><a href="mls.html">MLS</a></li>
+                <li><a href="listing2.0.html">Listings</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
