@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
+    <title>Buyers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "adobe-garamond-pro", serif;
+        }
+
+        /* Header & Navbar */
+    		header {
+    			display: flex;
+    			justify-content: space-between;
+    			align-items: center;
+    			padding: 15px 20px;
+    			background-color: #ffffff;
+    			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    			position: relative; /* Ensures dropdown appears above hero */
+    			z-index: 10; /* Make sure navbar is above hero image */
+    		}
+    
+    		header img {
+    			height: 60px;
+    		}
+    
+    		nav ul {
+    			list-style: none;
+    			display: flex;
+    			gap: 20px;
+    		}
+    
+    		nav li {
+    			position: relative;
+    		}
+    
+    		nav a {
+    			text-decoration: none;
+    			color: #000;
+    			font-size: 16px;
+    			text-transform: uppercase;
+    			padding: 8px 12px;
+    		}
+    
+    		nav a:hover {
+    			background-color: #ddd9d9;
+    			border-radius: 5px;
+    		}
+    
+    		/* Dropdown Menu */
+    		.dropdown {
+    			position: relative;
+    		}
+    
+    		.dropdown-content {
+    			display: none;
+    			position: absolute;
+    			top: 100%;
+    			left: 0;
+    			background-color: white;
+    			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    			border-radius: 5px;
+    			min-width: 150px;
+    			z-index: 20; /* Ensure dropdown content is above other elements */
+    		}
+    
+    		.dropdown-content a {
+    			display: block;
+    			padding: 10px;
+    			text-align: left;
+    		}
+    
+    		.dropdown-content a:hover {
+    			background-color: #ddd;
+    		}
+    
+    		.dropdown:hover .dropdown-content {
+    			display: block;
+    		}
+    
+    		/* Hero Section */
+    		.hero {
+    			position: relative;
+    			background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/_04335dbb-4918-4f89-b9bb-95122c0fc44c.jpg');
+    			background-size: cover;
+    			background-position: center;
+    			height: 600px;
+    			color: white;
+    			display: flex;
+    			justify-content: center;
+    			align-items: center;
+    			text-align: center;
+    			z-index: 1;
+    		}
+    
+    		.hero-overlay {
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			width: 100%;
+    			height: 100%;
+    			background-color: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    			display: flex;
+    			justify-content: center;
+    			align-items: center;
+    		}
+    
+    		.hero h1 {
+    			font-size: 48px;
+    			font-weight: bold;
+    			position: relative; 
+    		}
+    
+    		.hero p {
+    			font-size: 18px;
+    			margin-top: 10px;
+    			position: relative; 
+    		}
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Accordion Style */
+        .step {
+            margin-bottom: 20px;
+        }
+
+        .step-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s ease;
+        }
+
+        .step-header:hover {
+            background-color: #ddd;
+        }
+
+        .step-header img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .step-content {
+            display: none;
+            padding: 15px;
+            border-left: 2px solid #ccc;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .step-content li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="C:\Users\hmari\OneDrive\Desktop\DMWebsite\DM-logo.jpeg" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="resources.html">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="buyers.html">Buyers</a>
+                        <a href="sellers.html">Sellers</a>
+                        <a href="investors.html">Investors</a>
+                    </div>
+                </li>
+                <li><a href="mls.html">MLS</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	<!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1>Step-by-Step Buyer's Guide</h1>
+            <p>Your Path to the Perfect Home, One Step at a Time</p>
+        </div>
+    </div>
+
+    <main>
+        <h1>Buyers</h1>
+        <p>Follow these steps to help guide you through your home buying journey:</p>
+
+        <!-- Step 1 -->
+        <div class="step" id="step1">
+            <div class="step-header" onclick="toggleContent('content1')">
+                <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/moneybag.png" alt="Three moneybag icons in black and white">
+                <h3>Step 1: Research & Financial Preparation</h3>
+            </div>
+            <div class="step-content" id="content1">
+                <ul>
+                    <li><strong>Define Your Wants & Needs:</strong> Consider home size, location, number of bedrooms, and must-have features. Research neighborhoods for amenities, schools, commute times, and property values.</li>
+                    <li><strong>Review Your Financial Health:</strong> Check your credit scores. Lenders assess reports from Equifax, Experian, and TransUnion. Reduce outstanding debt and avoid new major purchases before applying for a mortgage.</li>
+                    <li><strong>Gather Key Financial Documents:</strong> Recent pay stubs (last 2 months), tax returns (past 2 years), Bank statements (checking, savings, and investment accounts), Credit card & loan records (auto, student, personal loans), 401(k), life insurance, or other assets, Rental history or lease agreements (if applicable)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+            <div class="step-header" onclick="toggleContent('content2')">
+                <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/bank.png" alt="A black and white icon of a bank">
+                <h3>Step 2: Get Pre-Approved & Find an Agent</h3>
+            </div>
+            <div class="step-content" id="content2">
+                <ul>
+                    <li><strong>Get Pre-Qualified & Pre-Approved:</strong> Pre-Qualification: A lender estimates what you can afford based on your income and debt (no credit check required). Pre-Approval: A more detailed process requiring income verification, credit check, and a thorough financial review. If approved, you'll receive a pre-approval letter, showing sellers you’re financially ready.</li>
+                    <li><strong>Choose a Real Estate Agent:</strong> A knowledgeable agent simplifies your journey by: Providing expert market insights and access to exclusive listings, Scheduling home showings and guiding negotiations, Handling paperwork and ensuring a smooth buying process. Working with a trusted agent ensures you make informed decisions with professional support.  </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+            <div class="step-header" onclick="toggleContent('content3')">
+                <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/house.png" alt="A black and white icon of a house">
+                <h3>Step 3: Find Your Perfect Home</h3>
+            </div>
+            <div class="step-content" id="content3">
+                <ul>
+                    <li><strong>Refine Your Home Search:</strong> Use your list of must-haves vs. nice-to-haves to narrow options. Consider commute times, neighborhood safety, and property appreciation potential.</li>
+                    <li><strong>Tour Homes & Evaluate:</strong> Visit multiple homes and compare features, conditions, and potential renovations. Pay attention to structural aspects: roof, plumbing, electrical, and HVAC systems.</li>
+                    <li><strong>Assess Market Value:</strong> Your agent will analyze comparable home sales  to determine a competitive offer price. Once you find the one, be ready to act fast!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step" id="step4">
+            <div class="step-header" onclick="toggleContent('content4')">
+                <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/handshake.png" alt="A black and white icon of a handshake">
+                <h3>Step 4: Make an Offer & Secure Financing</h3>
+            </div>
+            <div class="step-content" id="content4">
+                <ul>
+                    <li><strong>Submitting an Offer:</strong> Your offer includes: purchase price, earnest money deposit (shows seller your commitment), Contingencies (e.g., financing, home inspection), Closing timeline & negotiation terms. The seller may accept, reject, or counter your offer. Your agent will handle negotiations to ensure the best deal.</li>
+                    <li><strong>Finalizing Your Mortgage:</strong> Submit financial documents (pay stubs, tax returns, bank statements), Choose loan type (conventional, FHA, VA, or USDA), Lock in your interest rate, Get a loan estimate detailing monthly payments and closing costs. Stay responsive to your lender’s requests to keep the process moving smoothly.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step" id="step5">
+            <div class="step-header" onclick="toggleContent('content5')">
+                <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/checklist.png" alt="A black and white icon of a checklist with a pencil">
+                <h3>Step 5: Home Inspection & Appraisal</h3>
+            </div>
+            <div class="step-content" id="content5">
+                <ul>
+                    <li><strong>Home Inspection:</strong> A professional inspector checks roof, plumbing, electrical, HVAC; Appliances, windows, insulation, and signs of damage; If issues arise, negotiate repairs or request seller concessions before moving forward.</li>
+                    <li><strong>Home Appraisal:</strong> The lender requires an independent appraisal to confirm the home’s value matches the loan amount. If the appraisal is lower than the purchase price, renegotiations may be needed. Once both steps are successfully completed, your loan moves toward final approval!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step" id="step6">
+            <div class="step-header" onclick="toggleContent('content6')">
+                <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/key.png" alt="An outstretched hand with a key above it">
+                <h3>Step 6: Close the Deal & Move In</h3>
+            </div>
+            <div class="step-content" id="content6">
+                <ul>
+                    <li><strong>Review Closing Documents:</strong> You’ll receive a closing disclosure outlining final loan terms and costs.Carefully review: Loan amount, interest rate, and monthly payments; Closing costs (appraisal fees, title insurance, taxes).</li>
+                    <li><strong>Secure Home Insurance:</strong> Lenders require home insurance to protect against damage, theft, or disasters. Obtain a policy before closing.</li>
+                    <li><strong>Final Walkthrough:</strong> Ensure repairs were completed and the home is in expected condition. Check appliances, plumbing, and doors/windows one last time.</li>
+                    <li><strong>Sign Paperwork & Get the Keys:</strong> At the closing meeting, sign legal documents, finalize payment, and receive the keys to your new home! Congratulations, you’re now a homeowner! Time to celebrate and plan your move!</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 HomesByMilledge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
