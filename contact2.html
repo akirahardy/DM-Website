@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome Icons -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url("https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/Gemini_Generated_Image_nqiym1nqiym1nqiy.jpeg") 
+                        no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            background-attachment: fixed;
+        }
+
+        /* Contact Section Layout */
+        .contact-container {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            gap: 40px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover Animation */
+        .contact-info:hover, .contact-form:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Directory */
+        .contact-info {
+            flex: 1;
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-info h2 {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            font-size: 20px;
+            color: #FFD700;
+        }
+
+        /* Making Labels Yellow */
+        .contact-info span {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            flex: 1;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #000;
+            padding: 10px;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, 
+        .contact-form select:focus, 
+        .contact-form textarea:focus {
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        /* Submit Button */
+        .contact-form button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #000;
+            background-color: transparent;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .contact-form button::after {
+            content: "+";
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .contact-form button:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        .contact-form button:hover::after {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .contact-info, .contact-form {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="mls.html">MLS</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        Contact Me
+    </div>
+
+    <!-- Contact Page Layout -->
+    <div class="contact-container">
+        <!-- Contact Information Directory -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><i class="fas fa-envelope"></i> <span>Email:</span> Darryl@sunshinerealtyandco.com</p>
+            <p><i class="fas fa-phone"></i> <span>Phone:</span> (904) 705-8801</p>
+            <p><i class="fas fa-map-marker-alt"></i> <span>Address:</span> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Have a question?</h2>
+            <p>We’d love to hear from you! Whether you have questions about buying, selling, or anything else, we’re here to help.</p>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Full Name *" required>
+                <input type="email" name="email" placeholder="Email Address *" required>
+                <textarea name="message" placeholder="Your Message *" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
