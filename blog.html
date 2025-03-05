@@ -19,14 +19,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #000000; /* Black background */
             padding: 15px 20px;
-            background-color: #ffffff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 10;
         }
 
         header img {
             height: 60px;
+            transition: transform 0.3s ease-in-out;
         }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+nav a[href="buyers.html"], nav a[href="sellers.html"], nav a[href="investors.html"] {
+    color: #000000; /* Black text for these links */
+}
+
 
         nav ul {
             list-style: none;
