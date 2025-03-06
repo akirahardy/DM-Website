@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <title>Buyers</title>
     <style>
-        * {
+        *, h3, p {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -25,7 +25,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background-color: #fff;
+            background-color: #000;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
@@ -48,7 +48,7 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #FFF;
             font-size: 16px;
             text-transform: uppercase;
             padding: 10px 15px;
@@ -56,8 +56,7 @@
         }
 
         nav a:hover {
-            background-color: #f4f4f4;
-            color: #007bff;
+            color: #FFF;
         }
 
         /* Dropdown Menu */
@@ -70,7 +69,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: white;
+            background-color: black;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             min-width: 160px;
@@ -81,11 +80,7 @@
             display: block;
             padding: 12px;
             text-align: left;
-            color: #333;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f4f4f4;
+            color: #FFF;
         }
 
         .dropdown:hover .dropdown-content {
@@ -131,11 +126,11 @@
         }
 		
 		#dynamic-title {
-			text-align: center; /* Centers the text */
-			font-size: 2rem; /* Adjust the font size */
-			font-weight: bold; /* Make the title bold */
-			color: #000; /* Set text color */
-			margin: 20px 0; /* Add some space above and below */
+			text-align: center; 
+			font-size: 2rem; 
+			font-weight: bold; 
+			color: #000; 
+			margin: 20px 0; 
 			padding: 10px;
 		}
 
@@ -185,10 +180,13 @@
 
         .step-content ul {
             padding-left: 20px;
+			margin-bottom: 30px;
+			list-style-position: inside;
         }
 
         .step-content li {
             margin-bottom: 10px;
+			padding-left: 20px;
         }
 
         /* Main Content */
@@ -209,6 +207,78 @@
             background-color: #f4f4f4;
             margin-top: 30px;
         }
+		
+		/* Section Styling */
+			.footer-contact-form-wrapper {
+				background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/Florida-Sunrise.jpg'); 
+				background-size: cover;
+				background-attachment: fixed; 
+				background-position: center center;
+				padding: 50px;
+				color: #fff;
+			}
+
+			/* Container Styling */
+			.cf-inner-wrap {
+				text-align: center;
+			}
+
+			.footer-cf-title {
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
+
+			.footer-cf-title span {
+				font-weight: bold;
+				color: #ffcc00; 
+			}
+
+			/* Form Styling */
+			.consultation-form {
+				max-width: 600px;
+				margin: 0 auto;
+				background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+				padding: 20px;
+				border-radius: 10px;
+			}
+
+			.cf-field-container {
+				margin-bottom: 15px;
+			}
+
+			.cf-field-container input,
+			.cf-field-container textarea {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #fff;
+				border-radius: 5px;
+				background-color: transparent;
+				color: #fff;
+			}
+
+			.cf-field-container textarea {
+				resize: vertical;
+			}
+
+			.cf-submit button {
+				padding: 15px 30px;
+				background-color: #ffcc00; 
+				border: none;
+				color: #fff;
+				font-size: 16px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+
+			.cf-submit button:hover {
+				background-color: #ff9900;
+			}
+			
+			.highlight-yellow {
+				color: #ffcc00;  /* Yellow color */
+				font-weight: bold; 
+			}
+
 
     </style>
 </head>
@@ -277,16 +347,16 @@
 
        <!-- Step 1 Content -->
 		<div class="step-content" id="step1-content">
-			<h3>Define Your Wants & Needs</h3>
 			<ul>
+				<h3>Define Your Wants & Needs</h3>
 				<p>Before you start your home search, outline your ideal home features. Consider the size of the home, the number of bedrooms and bathrooms, and any must-have amenities like a home office, garage, or backyard. Research different neighborhoods to understand their amenities, local schools, commute times, and the overall property value trends. This will help you choose areas that fit your lifestyle and budget.</p>
 			</ul>
-			<h3>Review Your Financial Health</h3>
 			<ul>
+				<h3>Review Your Financial Health</h3>
 				<p>Your credit score plays a key role in your ability to secure a mortgage. Check your scores from Equifax, Experian, and TransUnion, and take steps to improve your credit if necessary. Pay down debt and avoid making large purchases before applying for a mortgage to maintain a healthy debt-to-income ratio.</p>
 			</ul>
-			<h3>Gather Key Financial Documents</h3>
 			<ul>
+				<h3>Gather Key Financial Documents</h3>
 				<li>Recent pay stubs (last 2 months) to verify your income</li>
 				<li>Tax returns from the last 2 years for additional income verification</li>
 				<li>Bank statements (checking, savings, and investment accounts) to confirm your available assets</li>
@@ -296,9 +366,8 @@
 				<li>Rental history to demonstrate your experience as a reliable tenant</li>
 				<li>Lease agreements (if applicable) to verify your rental background</li>
 			</ul>
-
-			<h3>Review Your Financial Health</h3>
 			<ul>
+				<h3>Review Your Financial Health</h3>
 				<li>Aim to have at least 6 months of expenses saved and a manageable debt-to-income ratio before beginning the home-buying process.</li>
 				<li>Check your credit score and work to improve it before applying for a mortgage.</li>
 				<li>Set a realistic budget for the down payment, closing costs, and ongoing home expenses.</li>
@@ -307,13 +376,13 @@
 
 		<!-- Step 2 Content -->
 		<div class="step-content" id="step2-content">
-			<h3>Get Pre-Qualified & Pre-Approved</h3>
 			<ul>
+				<h3>Get Pre-Qualified & Pre-Approved</h3>
 				<p><strong>Pre-Qualification:</strong> This is a simple process where lenders estimate how much you may be able to borrow based on your income and debt. No credit check is involved, but it's a useful starting point.</p>
 				<p><strong>Pre-Approval:</strong> A more thorough process involving income verification, credit checks, and a full review of your finances. If you’re pre-approved, you’ll receive a letter showing you’re ready to buy, which can make your offer more appealing to sellers.</p>
 			</ul>
-			<h3>Choose a Real Estate Agent</h3>
 			<ul>
+				<h3>Choose a Real Estate Agent</h3>
 				<p>Hiring a knowledgeable real estate agent can streamline the home-buying process. They can help you by:</p>
 				<li>Providing access to market trends, property values, and listings not widely available</li>
 				<li>Arranging home showings and guiding you through the negotiation process</li>
@@ -324,28 +393,28 @@
 
 		<!-- Step 3 Content -->
 		<div class="step-content" id="step3-content">
-			<h3>Refine Your Home Search</h3>
 			<ul>
+				<h3>Refine Your Home Search</h3>
 				<p>Use your list of must-haves versus nice-to-haves to narrow down options. Keep an eye on things like commute times, neighborhood safety, school ratings, and potential property appreciation.</p>
 			</ul>
-			<h3>Tour Homes & Evaluate</h3>
 			<ul>
+				<h3>Tour Homes & Evaluate</h3>
 				<p>Visit multiple homes to compare their features, conditions, and any needed renovations. Pay attention to structural elements that could be costly to fix, such as:</p>
 				<li>Roof condition and age</li>
 				<li>Plumbing, including pipes and water pressure</li>
 				<li>Electrical systems, such as outlets and wiring</li>
 				<li>HVAC systems (heating, ventilation, and air conditioning)</li>
 			</ul>
-			<h3>Assess Market Value</h3>
 			<ul>
+				<h3>Assess Market Value</h3>
 				<p>Your agent will help you analyze recent sales of comparable homes (comps) in the area to determine a fair price for the home. When you’ve found the right one, be prepared to make an offer quickly.</p>
 			</ul>
 		</div>
 
 		<!-- Step 4 Content -->
 		<div class="step-content" id="step4-content">
-			<h3>Submitting an Offer</h3>
 			<ul>
+				<h3>Submitting an Offer</h3>
 				<p>Your offer to the seller will include the following elements:</p>
 				<li>Offer price that aligns with the home’s market value</li>
 				<li>Earnest money deposit, which demonstrates your commitment to the purchase</li>
@@ -353,8 +422,8 @@
 				<li>Proposed closing timeline and terms for negotiation</li>
 				<p>The seller may accept, reject, or counter your offer. Your agent will help you navigate negotiations and work towards securing the best deal.</p>
 			</ul>
-			<h3>Finalizing Your Mortgage</h3>
 			<ul>
+				<h3>Finalizing Your Mortgage</h3>
 				<li>Submit all required financial documentation to your lender (pay stubs, tax returns, bank statements)</li>
 				<li>Select the type of loan (conventional, FHA, VA, USDA) based on your needs and eligibility</li>
 				<li>Lock in your interest rate to avoid market fluctuations</li>
@@ -365,8 +434,8 @@
 
 		<!-- Step 5 Content -->
 		<div class="step-content" id="step5-content">
-			<h3>Home Inspection</h3>
 			<ul>
+				<h3>Home Inspection</h3>
 				<p>A home inspection is a crucial step where a professional inspector evaluates the condition of the home. They will examine the:</p>
 				<li>Roof for signs of leaks or damage</li>
 				<li>Plumbing to ensure there are no leaks or drainage issues</li>
@@ -375,36 +444,69 @@
 				<li>Windows, doors, and insulation for energy efficiency</li>
 				<p>If issues are identified, negotiate with the seller for repairs or request concessions before moving forward.</p>
 			</ul>
-			<h3>Home Appraisal</h3>
 			<ul>
+				<h3>Home Appraisal</h3>
 				<p>The lender requires an independent appraisal to confirm the home’s value. If the appraisal is lower than your offer, you may need to renegotiate the purchase price. Once both the inspection and appraisal are satisfactory, you can proceed toward final loan approval!</p>
 			</ul>
 		</div>
 
 		<!-- Step 6 Content -->
 		<div class="step-content" id="step6-content">
-			<h3>Review Closing Documents</h3>
 			<ul>
+				<h3>Review Closing Documents</h3>
 				<p>You’ll receive a closing disclosure that outlines the final loan terms and costs. Carefully review:</p>
 				<li>Loan amount and interest rate</li>
 				<li>Monthly payment and total interest</li>
 				<li>Closing costs, including fees for appraisal, title insurance, and taxes</li>
 			</ul>
-			<h3>Secure Home Insurance</h3>
 			<ul>
+				<h3>Secure Home Insurance</h3>
 				<p>Homeowners insurance is a requirement for most lenders. Ensure you have adequate coverage to protect your home and personal belongings from potential damage or loss.</p>
 			</ul>
-			<h3>Final Walkthrough</h3>
 			<ul>
+				<h3>Final Walkthrough</h3>
 				<p>Before closing, perform a final walkthrough of the property to ensure it is in the agreed-upon condition. Verify that repairs have been made and check that appliances, plumbing, and doors/windows are functioning correctly.</p>
 			</ul>
-			<h3>Sign Paperwork & Get the Keys</h3>
 			<ul>
+				<h3>Sign Paperwork & Get the Keys</h3>
 				<p>At the closing meeting, you’ll sign the legal documents, finalize payment, and receive the keys to your new home! Congratulations on becoming a homeowner!</p>
 			</ul>
 		</div>
 
     </main>
+	
+	<section class="footer-contact-form-wrapper">
+		<div class="cf-inner-wrap">
+			<div class="textwidget custom-html-widget">
+				<div class="footer-cf-title">
+					Schedule a <span>Consultation Today</span>
+				</div>
+				<div class="cf-main-form">
+					<form action="/submit-form" method="post" class="consultation-form">
+						<div class="cf-field-container">
+							<label for="cf-name">Name</label>
+							<input type="text" id="cf-name" name="your-name" required>
+						</div>
+
+						<div class="cf-field-container">
+							<label for="cf-email">E-mail Address</label>
+							<input type="email" id="cf-email" name="your-email" required>
+						</div>
+
+						<div class="cf-field-container">
+							<label for="cf-message">Message</label>
+							<textarea id="cf-message" name="cf-message" rows="5" required></textarea>
+						</div>
+
+						<div class="cf-submit">
+							<button type="submit" class="cf-submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
     <footer>
         <p>&copy; 2025 HomesByMilledge. | All Rights Reserved.</p>
@@ -423,7 +525,7 @@
             selectedContent.style.display = 'block';
         }
 
-        // Update the dynamic header below the hero image
+        // Step titles array
         const stepTitles = [
             "1. Research & Financial Preparation",
             "2. Get Pre-Approved & Find an Agent",
@@ -433,8 +535,15 @@
             "6. Close the Deal & Move In"
         ];
 
-        // Change the content of the dynamic header
-        document.getElementById('dynamic-title').textContent = stepTitles[step - 1];
+        // Define the title that should be dynamically updated
+        let title = stepTitles[step - 1];
+
+        // Apply yellow highlighting to the part after "&" and the phrase "Perfect Home"
+        title = title.replace(/& (.*)/, '& <span class="highlight-yellow">$1</span>');  // Only makes words after "&" yellow
+        title = title.replace(/(Perfect Home)/, '<span class="highlight-yellow">$1</span>'); // Makes "Perfect Home" yellow
+
+        // Change the content of the dynamic header and inject the title with the span
+        document.getElementById('dynamic-title').innerHTML = title; // Use innerHTML to allow HTML tags like <span> to be rendered
     }
 
     // Ensure Step 1 content is shown on page load
@@ -442,6 +551,9 @@
         showStepContent(1); // Automatically show content for Step 1 on page load
     }
 </script>
+
+
+
 
 
 </body>
