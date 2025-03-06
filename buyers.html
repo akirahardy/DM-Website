@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <title>Buyers</title>
     <style>
         * {
@@ -16,6 +16,7 @@
            font-family: 'Merriweather', serif;
             line-height: 1.6;
             background-color: #fff;
+			font-size: 20px;
         }
 
         /* Header & Navbar */
@@ -94,7 +95,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/4f6f2196150dbcb53dea713cf2229bda6f326dea/buyerspage.jpg');
+            background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/wp2406659.jpg');
             background-size: cover;
             background-position: center;
             height: 600px;
@@ -133,12 +134,9 @@
 			text-align: center; /* Centers the text */
 			font-size: 2rem; /* Adjust the font size */
 			font-weight: bold; /* Make the title bold */
-			color: #333; /* Set text color */
+			color: #000; /* Set text color */
 			margin: 20px 0; /* Add some space above and below */
 			padding: 10px;
-			background-color: #f4f4f4; /* Light background for better readability */
-			border-radius: 5px; /* Rounded corners for the background */
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 		}
 
         /* Timeline Section */
@@ -170,7 +168,7 @@
         }
 
         .timeline-item h3 {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             margin-top: 8px;
         }
@@ -182,9 +180,7 @@
             background-color: #fff;
             margin-top: 20px;
             border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
-            color: #333;
         }
 
         .step-content ul {
@@ -252,27 +248,27 @@
     <!-- Timeline Section -->
     <div class="timeline">
         <div class="timeline-item" onclick="showStepContent(1)">
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/moneybag.png" alt="Step 1 Icon">
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/2717575.png" alt="Step 1 Icon">
             <h3>Research & Financial Preparation</h3>
         </div>
         <div class="timeline-item" onclick="showStepContent(2)">
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/bank.png" alt="Step 2 Icon">
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/2721961.png" alt="Step 2 Icon">
             <h3>Get Pre-Approved & Find an Agent</h3>
         </div>
         <div class="timeline-item" onclick="showStepContent(3)">
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/house.png" alt="Step 3 Icon">
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/10206105.png" alt="Step 3 Icon">
             <h3>Find Your Perfect Home</h3>
         </div>
         <div class="timeline-item" onclick="showStepContent(4)">
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/handshake.png" alt="Step 4 Icon">
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/3113031.png" alt="Step 4 Icon">
             <h3>Make an Offer & Secure Financing</h3>
         </div>
         <div class="timeline-item" onclick="showStepContent(5)">
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/checklist.png" alt="Step 5 Icon">
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/12218469.png" alt="Step 5 Icon">
             <h3>Home Inspection & Appraisal</h3>
         </div>
         <div class="timeline-item" onclick="showStepContent(6)">
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/key.png" alt="Step 6 Icon">
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/18085047.png" alt="Step 6 Icon">
             <h3>Close the Deal & Move In</h3>
         </div>
     </div>
@@ -283,8 +279,7 @@
 		<div class="step-content" id="step1-content">
 			<h3>Define Your Wants & Needs</h3>
 			<ul>
-				<p>Before you start your home search, outline your ideal home features. Consider the size of the home, the number of bedrooms and bathrooms, and any must-have amenities like a home office, garage, or backyard.</p>
-				<p>Research different neighborhoods to understand their amenities, local schools, commute times, and the overall property value trends. This will help you choose areas that fit your lifestyle and budget.</p>
+				<p>Before you start your home search, outline your ideal home features. Consider the size of the home, the number of bedrooms and bathrooms, and any must-have amenities like a home office, garage, or backyard. Research different neighborhoods to understand their amenities, local schools, commute times, and the overall property value trends. This will help you choose areas that fit your lifestyle and budget.</p>
 			</ul>
 			<h3>Review Your Financial Health</h3>
 			<ul>
@@ -430,12 +425,12 @@
 
         // Update the dynamic header below the hero image
         const stepTitles = [
-            "Research & Financial Preparation",
-            "Get Pre-Approved & Find an Agent",
-            "Find Your Perfect Home",
-            "Make an Offer & Secure Financing",
-            "Home Inspection & Appraisal",
-            "Close the Deal & Move In"
+            "1. Research & Financial Preparation",
+            "2. Get Pre-Approved & Find an Agent",
+            "3. Find Your Perfect Home",
+            "4. Make an Offer & Secure Financing",
+            "5. Home Inspection & Appraisal",
+            "6. Close the Deal & Move In"
         ];
 
         // Change the content of the dynamic header
