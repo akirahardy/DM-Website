@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sell Your Home | HomesByMilledge</title>
+    <title>Sellers | HomesByMilledge</title>
     <link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
@@ -12,27 +12,33 @@
             padding: 0;
             box-sizing: border-box;
             font-family: "Helvetica Neue", sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
         }
 
+        /* Header */
         header {
+            background: #000;
+            height: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: #000;
-            border-bottom: 1px solid #fff;
+            padding: 0 50px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease-in-out;
         }
 
         .header-logo {
-            height: 40px;
+            height: 50px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s forwards 0.5s;
         }
 
         nav ul {
@@ -47,99 +53,160 @@
             font-size: 16px;
             font-weight: bold;
             transition: color 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeIn 1s forwards 0.8s;
         }
 
         nav a:hover {
             color: #ccc;
         }
 
+        /* Hero Section */
         .hero {
-            background: url('luxury-home.jpg') no-repeat center center/cover;
-            height: 70vh;
+            background: url('https://raw.githubusercontent.com/akirahardy/DM-Website/191ab86ed5ce6a44f79c3fd57b3480b983b47f88/p0h9k5dl.jpg') no-repeat center center/cover;
+            height: 95vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 3rem;
-            font-weight: bold;
-            padding: 20px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
             position: relative;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            color: #fff;
+            animation: fadeInHero 1.0s ease-in-out;
         }
 
         .hero h1 {
-            position: relative;
-            z-index: 1;
+            font-size: 3.5rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease-in-out;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 40px;
-            background: #111;
-            border-radius: 8px;
-        }
-
-        .sell-options {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .sell-option {
-            flex: 1;
-            min-width: 300px;
-            background: #222;
-            padding: 30px;
-            border-radius: 8px;
+        /* New Sections */
+        .info-section {
+            padding: 80px 20px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #fff;
+            background: #f9f9f9;
         }
 
-        .sell-option:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-        }
-
-        .sell-option h3 {
-            color: #fff;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .sell-option p {
-            font-size: 14px;
-            color: #bbb;
-        }
-
-        .sell-option a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 24px;
-            color: #000;
-            background: #fff;
-            text-decoration: none;
+        .info-section h2 {
+            font-size: 2.8rem;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            color: #333;
+            margin-bottom: 30px;
         }
 
-        .sell-option a:hover {
-            background: #ccc;
+        .info-section p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto 40px;
         }
 
+        /* Steps to Sell */
+        .steps-to-sell {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .step-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px); /* Start offscreen */
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .step-card p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .step-card i {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: #000;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px 20px;
+        }
+
+        .why-choose-us .card {
+            background: #fff;
+            padding: 30px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(50px); /* Start offscreen */
+            transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+        }
+
+        .why-choose-us .card:hover {
+            transform: scale(1.05);
+        }
+
+        .why-choose-us .card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        /* Modern Button (White and Black) */
+        .modern-button {
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 1.0s ease-in-out;
+            display: inline-block;
+        }
+
+        .modern-button:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modern-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
         footer {
             background: #000;
             color: #fff;
@@ -148,46 +215,137 @@
             margin-top: 50px;
             border-top: 1px solid #fff;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll animation */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0); /* Move it to its original position */
+        }
+
     </style>
 </head>
 <body>
+
     <header>
         <img src="DM-logo.jpeg" alt="Logo" class="header-logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="resources.html">Resources</a></li>
                 <li><a href="mls.html">Listings</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Me</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Sell Your Home with Confidence</h1>
+        <h1>Sell Your Home With Ease</h1>
+        <a href="#how-it-works"><button class="modern-button">Steps to selling your home</button></a>
     </section>
 
-    <div class="container">
-        <div class="sell-options">
-            <div class="sell-option">
-                <h3>Instant Offer</h3>
-                <p>Receive a competitive offer and close quickly.</p>
-                <a href="#">Get an Offer</a>
+    <section class="info-section" id="how-it-works">
+        <h2>How It Works</h2>
+       
+
+        <!-- Steps to sell section -->
+        <div class="steps-to-sell">
+            <div class="step-card reveal">
+                <i class="fas fa-search"></i>
+                <h3>Step 1: Request an Offer</h3>
+                <p>Start by filling out our quick and easy form online. This initiates the process where we collect important details about your property. No obligations, no fees!</p>
             </div>
-            <div class="sell-option">
-                <h3>Check Home Value</h3>
-                <p>Get an accurate valuation of your property.</p>
-                <a href="#">Check Value</a>
+            <div class="step-card reveal">
+                <i class="fas fa-search-location"></i>
+                <h3>Step 2: Home Evaluation</h3>
+                <p>Our expert team will contact you to schedule a free, no-commitment evaluation of your home. We’ll assess your property’s condition, location, and current market value.</p>
+            </div>
+            <div class="step-card reveal">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Step 3: Get Your Offer</h3>
+                <p>After evaluating your property, we’ll provide you with a competitive cash offer. We base this on our in-depth knowledge of the local market and your home’s specifics.</p>
+            </div>
+            <div class="step-card reveal">
+                <i class="fas fa-handshake"></i>
+                <h3>Step 4: Close the Deal</h3>
+                <p>Once you accept the offer, we handle all the paperwork. Our team will work with you to finalize the sale, making sure everything runs smoothly for a quick, hassle-free closing.</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="card reveal">
+            <i class="fas fa-trophy"></i>
+            <h3>Expert Service</h3>
+            <p>We offer unparalleled service to make the selling process as easy as possible.</p>
+        </div>
+        <div class="card reveal">
+            <i class="fas fa-clock"></i>
+            <h3>Fast Process</h3>
+            <p>Get cash for your home in as little as a week! No waiting for banks or financing.</p>
+        </div>
+        <div class="card reveal">
+            <i class="fas fa-handshake"></i>
+            <h3>Fair Offers</h3>
+            <p>We provide fair, competitive cash offers that are based on the true value of your home.</p>
+        </div>
+    </section>
 
     <footer>
-        &copy; 2025 HomesByMilledge. All Rights Reserved.
+        <p>&copy; 2025 HomesByMilledge. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Scroll animation activation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const handleScroll = () => {
+            revealElements.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Trigger initially in case of elements already in view
+    </script>
+
 </body>
 </html>
-
-
