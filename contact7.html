@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    
+    <!-- Correct FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Updated Hover Effect: Turns Black */
+        nav a:hover {
+            color: black;
+        }
+
+        /* Contact Page Layout */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-box {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Contact Info Sidebar */
+        .contact-info {
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+
+        .contact-info i {
+            font-size: 18px;
+            color: black; /* Icons in contact info are black */
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            justify-content: start;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 32px; /* Increased size */
+            color: black; /* Default black */
+            transition: color 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700; /* Turns gold on hover */
+        }
+
+        /* Contact Form */
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #aaa;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        /* Submit Button */
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid black;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .contact-form button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-box {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-info, .contact-form {
+                width: 100%;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- YouTube Video Background -->
+    <div class="video-background">
+        <iframe 
+            src="https://www.youtube.com/embed/dcWjEq5Jlvo?autoplay=1&mute=1&loop=1&playlist=dcWjEq5Jlvo&controls=0&showinfo=0&modestbranding=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="mls.html">MLS</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Page Layout -->
+    <div class="contact-container">
+        <div class="contact-box">
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><i class="fas fa-envelope"></i> darryl@sunshinerealtyandco.com</p>
+                <p><i class="fas fa-phone"></i> (904) 705-8801</p>
+                <p><i class="fas fa-map-marker-alt"></i> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/darryl-milledge-ii-96294574/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/SunshineRealtyandCo" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/mr_dee2you" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send a Message</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Full Name *" required>
+                    <input type="email" name="email" placeholder="Email Address *" required>
+                    <textarea name="message" placeholder="Your Message *" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
