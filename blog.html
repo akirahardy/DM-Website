@@ -84,33 +84,40 @@
 
         /* Hero Section */
         .hero {
-            background: url('blog-hero.jpg');
-            color: white;
-            text-align: center;
-            padding: 200px 20px;
             position: relative;
+            background-image: url('https://cdn.prod.website-files.com/64cd2f4a9212d2415bfcf9f8/65155299b7b13ab70f71ffe6_Royal%20Green%20Condo2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Overlay */
-        .hero::after {
-            content: "";
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-            z-index: -1;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         /* Blog Grid - Modified to list layout */
@@ -211,8 +218,10 @@
 
     <!-- Hero Section -->
     <div class="hero">
-        <h1>Blog</h1>
-        <p>Your ultimate guide to real estate trends, tips, and insights</p>
+		<div>
+			<h1>Blog</h1>
+			<p>Your ultimate guide to real estate trends, tips, and insights</p>
+		</div>
     </div>
 
     <!-- Spotlight Article Section -->
