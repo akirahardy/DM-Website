@@ -7,6 +7,7 @@
     
     <!-- Correct FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -52,21 +53,19 @@
 
         /* Header */
         header {
-            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+            background-color: #000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
         }
 
         header img {
-            height: 50px;
+            height: 60px;
+            object-fit: contain;
         }
 
         nav ul {
@@ -75,18 +74,49 @@
             gap: 20px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            text-transform: uppercase;
-            padding: 8px 12px;
-            transition: color 0.3s ease-in-out;
+        nav li {
+            position: relative;
         }
 
-        /* Updated Hover Effect: Turns Black */
+        nav a {
+            text-decoration: none;
+            color: #FFF;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
         nav a:hover {
-            color: black;
+            color: #FFF;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: black;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            min-width: 160px;
+            z-index: 20;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px;
+            text-align: left;
+            color: #FFF;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Contact Page Layout */
@@ -207,6 +237,13 @@
             background-color: white;
             color: black;
         }
+		
+		footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFF;
+			box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -223,7 +260,8 @@
             .social-icons {
                 justify-content: center;
             }
-        }
+			
+		
     </style>
 </head>
 <body>
@@ -244,8 +282,15 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="mls.html">MLS</a></li>
+                <li class="dropdown">
+                    <a href="resources.html">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="buyers.html">Buyers</a>
+                        <a href="sellers.html">Sellers</a>
+                        <a href="investors.html">Investors</a>
+                    </div>
+                </li>
+                <li><a href="listings.html">Listings</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -285,6 +330,10 @@
 
         </div>
     </div>
+	
+	<footer>
+        <p>&copy; 2025 HomesByMilledge. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
