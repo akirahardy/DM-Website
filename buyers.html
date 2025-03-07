@@ -126,10 +126,10 @@
         }
 		
 		#dynamic-title {
-			text-align: center; /* Centers the text */
-			font-size: 2rem; /* Adjust the font size */
-			font-weight: bold; /* Make the title bold */
-			color: #000; /* Set text color */
+			text-align: center;
+			font-size: 2rem; 
+			font-weight: bold; 
+			color: #000; 
 			margin: 20px 0; /* Add some space above and below */
 			padding: 10px;
 		}
@@ -210,7 +210,7 @@
 		
 		/* Section Styling */
 			.footer-contact-form-wrapper {
-				background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/Florida-Sunrise.jpg'); /* Set your background image */
+				background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/Florida-Sunrise.jpg'); 
 				background-size: cover;
 				background-attachment: fixed; 
 				background-position: center center;
@@ -230,7 +230,7 @@
 
 			.footer-cf-title span {
 				font-weight: bold;
-				color: #ffcc00; /* Adjust as needed */
+				color: #ffcc00; 
 			}
 
 			/* Form Styling */
@@ -262,7 +262,7 @@
 
 			.cf-submit button {
 				padding: 15px 30px;
-				background-color: #ffcc00; /* Adjust color as needed */
+				background-color: #ffcc00; 
 				border: none;
 				color: #fff;
 				font-size: 16px;
@@ -271,12 +271,12 @@
 			}
 
 			.cf-submit button:hover {
-				background-color: #ff9900; /* Adjust color as needed */
+				background-color: #ff9900; 
 			}
 			
 			.highlight-yellow {
 				color: #ffcc00;  /* Yellow color */
-				font-weight: bold;  /* Optional for bold text */
+				font-weight: bold;  
 			}
 
 
@@ -482,7 +482,7 @@
 					Schedule a <span>Consultation Today</span>
 				</div>
 				<div class="cf-main-form">
-					<form action="/submit-form" method="post" class="consultation-form">
+					<form id="consultation-form" acton="#" method="post" class="consultation-form">
 						<div class="cf-field-container">
 							<label for="cf-name">Name</label>
 							<input type="text" id="cf-name" name="your-name" required>
@@ -502,6 +502,7 @@
 							<button type="submit" class="cf-submit">Submit</button>
 						</div>
 					</form>
+					<div id="thank-you-message" style="display:none; color: #ffcc00; font-weight: bold;">Thank you for your submission!</div>
 				</div>
 			</div>
 		</div>
@@ -513,43 +514,54 @@
     </footer>
 
     <script>
-    // Function to show the content for the selected step
-    function showStepContent(step) {
-        // Hide all step content
-        const allContents = document.querySelectorAll('.step-content');
-        allContents.forEach(content => content.style.display = 'none');
+    // Form submission handling
+	document.getElementById("consultation-form").addEventListener("submit", function(event) {
+		event.preventDefault(); // Prevents default form submission
 
-        // Show the selected step content
-        const selectedContent = document.getElementById('step' + step + '-content');
-        if (selectedContent) {
-            selectedContent.style.display = 'block';
-        }
+		// Display the thank-you message
+		document.getElementById("thank-you-message").style.display = "block";
 
-        // Step titles array
-        const stepTitles = [
-            "1. Research & Financial Preparation",
-            "2. Get Pre-Approved & Find an Agent",
-            "3. Find Your Perfect Home",
-            "4. Make an Offer & Secure Financing",
-            "5. Home Inspection & Appraisal",
-            "6. Close the Deal & Move In"
-        ];
+		// Clear the form fields after submission
+		this.reset();
+	});
 
-        // Define the title that should be dynamically updated
-        let title = stepTitles[step - 1];
+	// Function to show the content for the selected step
+	function showStepContent(step) {
+		// Hide all step content
+		const allContents = document.querySelectorAll('.step-content');
+		allContents.forEach(content => content.style.display = 'none');
 
-        // Apply yellow highlighting to the part after "&" and the phrase "Perfect Home"
-        title = title.replace(/& (.*)/, '& <span class="highlight-yellow">$1</span>');  // Only makes words after "&" yellow
-        title = title.replace(/(Perfect Home)/, '<span class="highlight-yellow">$1</span>'); // Makes "Perfect Home" yellow
+		// Show the selected step content
+		const selectedContent = document.getElementById('step' + step + '-content');
+		if (selectedContent) {
+			selectedContent.style.display = 'block';
+		}
 
-        // Change the content of the dynamic header and inject the title with the span
-        document.getElementById('dynamic-title').innerHTML = title; // Use innerHTML to allow HTML tags like <span> to be rendered
-    }
+		// Step titles array
+		const stepTitles = [
+			"1. Research & Financial Preparation",
+			"2. Get Pre-Approved & Find an Agent",
+			"3. Find Your Perfect Home",
+			"4. Make an Offer & Secure Financing",
+			"5. Home Inspection & Appraisal",
+			"6. Close the Deal & Move In"
+		];
 
-    // Ensure Step 1 content is shown on page load
-    window.onload = function() {
-        showStepContent(1); // Automatically show content for Step 1 on page load
-    }
+		// Define the title that should be dynamically updated
+		let title = stepTitles[step - 1];
+
+		// Apply yellow highlighting to the part after "&" and "Perfect Home"
+		title = title.replace(/& (.*)/, '& <span class="highlight-yellow">$1</span>');  // Only makes words after "&" yellow
+		title = title.replace(/(Perfect Home)/, '<span class="highlight-yellow">$1</span>'); // Makes "Perfect Home" yellow
+
+		// Change the content of the dynamic header and inject the title with the span
+		document.getElementById('dynamic-title').innerHTML = title; // Use innerHTML to allow HTML tags like <span> to be rendered
+	}
+
+	// Ensure Step 1 content is shown on page load
+	window.onload = function() {
+		showStepContent(1); // Automatically show content for Step 1 on page load
+	};
 </script>
 
 </body>
