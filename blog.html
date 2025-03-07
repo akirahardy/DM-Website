@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/nms2mkj.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <title>Blog</title>
     <style>
         body {
@@ -19,34 +19,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #000000; /* Black background */
             padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            width: 100%;
+            background-color: #000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
             z-index: 10;
         }
 
         header img {
             height: 60px;
-            transition: transform 0.3s ease-in-out;
+            object-fit: contain;
         }
-
-        header img:hover {
-            transform: scale(1.1);
-        }
-nav a[href="buyers.html"], nav a[href="sellers.html"], nav a[href="investors.html"] {
-    color: #000000; /* Black text for these links */
-}
-
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
-            padding: 0;
-            margin: 0;
         }
 
         nav li {
@@ -55,16 +43,20 @@ nav a[href="buyers.html"], nav a[href="sellers.html"], nav a[href="investors.htm
 
         nav a {
             text-decoration: none;
-            color: #000;
+            color: #FFF;
             font-size: 16px;
             text-transform: uppercase;
-            padding: 8px 12px;
-            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
         }
 
         nav a:hover {
-            background-color: #ddd9d9;
-            border-radius: 5px;
+            color: #FFF;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
         }
 
         .dropdown-content {
@@ -72,17 +64,18 @@ nav a[href="buyers.html"], nav a[href="sellers.html"], nav a[href="investors.htm
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: black;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            min-width: 150px;
-            z-index: 1000;
+            min-width: 160px;
+            z-index: 20;
         }
 
         .dropdown-content a {
             display: block;
-            padding: 10px;
+            padding: 12px;
             text-align: left;
+            color: #FFF;
         }
 
         .dropdown:hover .dropdown-content {
@@ -195,7 +188,7 @@ nav a[href="buyers.html"], nav a[href="sellers.html"], nav a[href="investors.htm
 <body>
 
     <header>
-        <img src="DM-logo.jpeg" alt="Logo">
+        <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -207,13 +200,14 @@ nav a[href="buyers.html"], nav a[href="sellers.html"], nav a[href="investors.htm
                         <a href="investors.html">Investors</a>
                     </div>
                 </li>
-                <li><a href="listing2.0.html">Listings</a></li>
+                <li><a href="listings.html">Listings</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+
 
     <!-- Hero Section -->
     <div class="hero">
