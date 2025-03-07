@@ -56,7 +56,7 @@
         }
 
         nav a:hover {
-            color: #FFF;
+            color: #ccc;
         }
 
         /* Dropdown Menu */
@@ -85,6 +85,7 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
+			color: #ccc;
         }
 
         /* Hero Section */
@@ -126,10 +127,10 @@
         }
 		
 		#dynamic-title {
-			text-align: center;
-			font-size: 2rem; 
-			font-weight: bold; 
-			color: #000; 
+			text-align: center; /* Centers the text */
+			font-size: 2rem; /* Adjust the font size */
+			font-weight: bold; /* Make the title bold */
+			color: #000; /* Set text color */
 			margin: 20px 0; /* Add some space above and below */
 			padding: 10px;
 		}
@@ -204,13 +205,13 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #f4f4f4;
-            margin-top: 30px;
+            background-color: #000;
+			color: #FFF;
         }
 		
 		/* Section Styling */
 			.footer-contact-form-wrapper {
-				background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/Florida-Sunrise.jpg'); 
+				background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/Florida-Sunrise.jpg'); /* Set your background image */
 				background-size: cover;
 				background-attachment: fixed; 
 				background-position: center center;
@@ -230,7 +231,7 @@
 
 			.footer-cf-title span {
 				font-weight: bold;
-				color: #ffcc00; 
+				color: #ffcc00; /* Adjust as needed */
 			}
 
 			/* Form Styling */
@@ -262,7 +263,7 @@
 
 			.cf-submit button {
 				padding: 15px 30px;
-				background-color: #ffcc00; 
+				background-color: #ffcc00; /* Adjust color as needed */
 				border: none;
 				color: #fff;
 				font-size: 16px;
@@ -271,12 +272,12 @@
 			}
 
 			.cf-submit button:hover {
-				background-color: #ff9900; 
+				background-color: #ff9900; /* Adjust color as needed */
 			}
 			
 			.highlight-yellow {
 				color: #ffcc00;  /* Yellow color */
-				font-weight: bold;  
+				font-weight: bold;  /* Optional for bold text */
 			}
 
 
@@ -509,8 +510,9 @@
 	</section>
 
 
-    <footer>
-        <p>&copy; 2025 HomesByMilledge. | All Rights Reserved.</p>
+    <!-- Footer -->
+	<footer>
+        <p>&copy; 2025 HomesByMilledge. All rights reserved.</p>
     </footer>
 
     <script>
@@ -521,7 +523,7 @@
 		// Display the thank-you message
 		document.getElementById("thank-you-message").style.display = "block";
 
-		// Clear the form fields after submission
+		// Optionally, clear the form fields after submission
 		this.reset();
 	});
 
@@ -550,7 +552,7 @@
 		// Define the title that should be dynamically updated
 		let title = stepTitles[step - 1];
 
-		// Apply yellow highlighting to the part after "&" and "Perfect Home"
+		// Apply yellow highlighting to the part after "&" and the phrase "Perfect Home"
 		title = title.replace(/& (.*)/, '& <span class="highlight-yellow">$1</span>');  // Only makes words after "&" yellow
 		title = title.replace(/(Perfect Home)/, '<span class="highlight-yellow">$1</span>'); // Makes "Perfect Home" yellow
 
@@ -562,7 +564,11 @@
 	window.onload = function() {
 		showStepContent(1); // Automatically show content for Step 1 on page load
 	};
+
+
 </script>
+
+
 
 </body>
 </html>
