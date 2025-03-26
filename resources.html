@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set the body background color and text properties */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #f4f4f4;
+            margin: 0; /* Remove default body margin */
+        }
+
+        /* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        header img {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFF;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: black;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            min-width: 160px;
+            z-index: 20;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px;
+            text-align: left;
+            color: #FFF;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            color: #ccc;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/66293eed311b8db5ab62f96deb7a555d0505fcfb/resources.jpg'); /* Updated to raw link */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            transition: transform 1s ease; /* Zoom effect */
+        }
+
+        .hero:hover {
+            transform: scale(1.1); /* Apply zoom effect */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: normal;
+            color: white;
+            position: relative;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+        }
+
+        /* Section Containers */
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .section {
+            width: 30%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px; /* Add spacing between sections */
+        }
+
+        .section h3 {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #444;
+        }
+
+        /* Additional Section for Text Under Hero */
+        .text-under-hero {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #FFF;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .section-container {
+                flex-direction: column;
+            }
+
+            .section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/main/DM-logo.jpeg" alt="DM Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="resources.html">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="buyers.html">Buyers</a>
+                        <a href="sellers.html">Sellers</a>
+                        <a href="investors.html">Investors</a>
+                    </div>
+                </li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <h1>Resources</h1>
+    </div>
+
+    <!-- Text under the Hero Image -->
+    <div class="text-under-hero">
+        <p>Explore Tailored Resources for Your Real Estate Goals</p>
+    </div>
+
+    <!-- Resource Sections -->
+    <div class="section-container">
+        <!-- Investors Section -->
+        <div class="section">
+            <h3>Investors</h3>
+            <p><i>Maximize Your Investment Potential</i></p>
+            <p>Discover market insights, property analysis tools, and resources to help you make informed investment decisions.</p>
+            <a href="investors.html" class="btn">Explore Investors Resources</a>
+        </div>
+
+        <!-- Buyers Section -->
+        <div class="section">
+            <h3>Buyers</h3>
+            <p><i>Find Your Dream Property with Confidence</i></p>
+            <p>Access step-by-step guides, mortgage calculators, and expert advice to simplify the home-buying process.</p>
+            <a href="buyers.html" class="btn">Explore Buyers Resources</a>
+        </div>
+
+        <!-- Sellers Section -->
+        <div class="section">
+            <h3>Sellers</h3>
+            <p><i>Sell Faster and for Top Dollar</i></p>
+            <p>Learn how to prepare your property, set the right price, and market effectively to attract qualified buyers.</p>
+            <a href="sellers.html" class="btn">Explore Sellers Resources</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container">
+        <p style="text-align: center;">Not sure where to start? <a href="contact.html">Contact us Today</a>.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 HomesByMilledge. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
