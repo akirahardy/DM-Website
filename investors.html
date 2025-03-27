@@ -103,7 +103,7 @@
 		/* Hero Section */
         .hero {
             position: relative;
-            background-image: url('https://dom.com.cy/upload/resize_cache/iblock/89a/870_654_2/89ab15c133d8695261f011a6cd3bf344.jpg');
+            background-image: url('https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/InvestorsHeroPic.jpg');
             background-size: cover;
             background-position: center;
             height: 600px;
@@ -115,6 +115,11 @@
             z-index: 1;
 			width: 100%;  /* Ensure it takes up the full width */
 			margin: 0;
+       transition: transform 1s ease; /* Zoom effect */
+        }
+
+        .hero:hover {
+            transform: scale(1.1); /* Apply zoom effect */
         }
 
         .hero-overlay {
@@ -437,3 +442,6 @@
     </script>
 </body>
 </html>
+
+
+
