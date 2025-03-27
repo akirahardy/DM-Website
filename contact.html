@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    
-    <!-- Correct FontAwesome CDN -->
+    <title>Contact Us</title>
+
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -19,25 +18,27 @@
         body {
             font-family: Arial, sans-serif;
             color: #333;
-            text-align: center;
-            opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
         }
 
-        /* Fade-in Animation */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        /* Video Background */
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+
         .video-background {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             z-index: -1;
         }
 
@@ -51,21 +52,37 @@
             pointer-events: none;
         }
 
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            color: white;
+            font-size: 64px;
+            font-style: italic;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+
         /* Header */
         header {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background-color: #000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 10;
         }
 
         header img {
-            height: 60px;
-            object-fit: contain;
+            height: 50px;
         }
 
         nav ul {
@@ -74,266 +91,160 @@
             gap: 20px;
         }
 
-        nav li {
-            position: relative;
-        }
-
         nav a {
             text-decoration: none;
-            color: #FFF;
+            color: white;
             font-size: 16px;
             text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 8px 12px;
+            transition: color 0.3s ease-in-out;
         }
 
         nav a:hover {
-            color: #ccc;
+            color: black;
         }
 
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: black;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            min-width: 160px;
-            z-index: 20;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 12px;
-            text-align: left;
-            color: #FFF;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Contact Page Layout */
-        .contact-container {
+        /* Contact Section */
+        .contact-wrapper {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-box {
-            max-width: 900px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 100px 10% 60px;
+            background: white;
+            flex-wrap: wrap;
             gap: 40px;
-            backdrop-filter: blur(10px);
         }
 
-        /* Contact Info Sidebar */
-        .contact-info {
+        .contact-left {
             flex: 1;
-            padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-info h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #222;
-        }
-
-        .contact-info p {
-            font-size: 16px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #555;
-        }
-
-        .contact-info i {
+            min-width: 280px;
             font-size: 18px;
-            color: black; /* Icons in contact info are black */
+            line-height: 1.6;
         }
 
-        /* Social Media Icons */
-        .social-icons {
-            display: flex;
-            justify-content: start;
-            gap: 15px;
-            margin-top: 20px;
+        .contact-left p {
+            margin-bottom: 15px;
         }
 
-        .social-icons a {
-            font-size: 32px; /* Increased size */
-            color: black; /* Default black */
-            transition: color 0.3s ease-in-out;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #FFD700; /* Turns gold on hover */
-        }
-
-        /* Contact Form */
         .contact-form {
             flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .contact-form h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #222;
+        .contact-form label {
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         .contact-form input, 
         .contact-form textarea {
-            width: 100%;
-            padding: 12px;
+            padding: 10px;
             font-size: 16px;
-            border: 1px solid #aaa;
-            background: rgba(255, 255, 255, 0.8);
-            color: #333;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            background: #fff;
         }
 
         .contact-form textarea {
+            height: 120px;
             resize: none;
-            height: 100px;
         }
 
-        /* Submit Button */
         .contact-form button {
-            width: 100%;
+            margin-top: 10px;
             padding: 12px;
-            border: 2px solid black;
-            background-color: black;
-            color: white;
             font-size: 16px;
-            text-transform: uppercase;
+            background: black;
+            color: white;
+            border: none;
             cursor: pointer;
+            font-weight: bold;
             transition: 0.3s ease-in-out;
         }
 
         .contact-form button:hover {
-            background-color: white;
+            background: white;
             color: black;
-        }
-		
-		footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #000;
-			color: #FFF;
+            border: 2px solid black;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .contact-box {
+            .contact-wrapper {
                 flex-direction: column;
-                gap: 20px;
+                padding: 80px 20px 40px;
             }
 
-            .contact-info, .contact-form {
-                width: 100%;
-                text-align: center;
+            .hero-text {
+                font-size: 42px;
+                padding: 0 10px;
             }
 
-            .social-icons {
-                justify-content: center;
+            nav ul {
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 100%;
+                right: 0;
+                display: none;
             }
-			
-		
+        }
     </style>
 </head>
 <body>
 
-    <!-- YouTube Video Background -->
-    <div class="video-background">
-        <iframe 
-            src="https://www.youtube.com/embed/dcWjEq5Jlvo?autoplay=1&mute=1&loop=1&playlist=dcWjEq5Jlvo&controls=0&showinfo=0&modestbranding=1" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="resources.html">Resources</a>
-                    <div class="dropdown-content">
-                        <a href="buyers.html">Buyers</a>
-                        <a href="sellers.html">Sellers</a>
-                        <a href="investors.html">Investors</a>
-                    </div>
-                </li>
-                <li><a href="listings.html">Listings</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Contact Page Layout -->
-    <div class="contact-container">
-        <div class="contact-box">
-            
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p><i class="fas fa-envelope"></i> darryl@sunshinerealtyandco.com</p>
-                <p><i class="fas fa-phone"></i> (904) 705-8801</p>
-                <p><i class="fas fa-map-marker-alt"></i> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
-
-                <!-- Social Media Icons -->
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/darryl-milledge-ii-96294574/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/SunshineRealtyandCo" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/mr_dee2you" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h2>Send a Message</h2>
-                <form>
-                    <input type="text" name="name" placeholder="Full Name *" required>
-                    <input type="email" name="email" placeholder="Email Address *" required>
-                    <textarea name="message" placeholder="Your Message *" required></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-
+    <!-- Hero Section with Video -->
+    <div class="hero-section">
+        <div class="video-background">
+            <iframe 
+                src="https://www.youtube.com/embed/dcWjEq5Jlvo?autoplay=1&mute=1&loop=1&playlist=dcWjEq5Jlvo&controls=0&showinfo=0&modestbranding=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <header>
+            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mls.html">Listings</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="hero-text">
+            Contact Us
         </div>
     </div>
-	
-	<footer>
-        <p>&copy; 2025 HomesByMilledge. All rights reserved.</p>
-    </footer>
+
+    <!-- Contact Info + Form -->
+    <div class="contact-wrapper">
+        <div class="contact-left">
+            <p>
+                Reach out to us today for personalized assistance and expert guidance in your real estate journey. We’re here to find your dream home!
+            </p>
+            <p><strong>Phone:</strong> 904-705-8801</p>
+            <p><strong>Office:</strong> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
+            <p><strong>Email:</strong> darryl@sunshinerealtyandco.com</p>
+        </div>
+
+        <form class="contact-form">
+            <label>Your Name:</label>
+            <input type="text" name="name" required>
+            <label>Your Email:</label>
+            <input type="email" name="email" required>
+            <label>Message:</label>
+            <textarea name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 </body>
 </html>
