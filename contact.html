@@ -1,250 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
 
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- FontAwesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            animation: fadeIn 1.5s ease-in-out forwards;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            height: 70vh;
-            overflow: hidden;
-        }
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 70vh;
+      overflow: hidden;
+    }
 
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
-        .video-background iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 120%;
-            height: 120%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
+    .video-background iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
 
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            color: white;
-            font-size: 64px;
-            font-style: italic;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            text-align: center;
-        }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: white;
+      font-size: 64px;
+      font-style: italic;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
 
-        /* Header */
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-        }
+    /* Header */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
 
-        header img {
-            height: 50px;
-        }
+    header img {
+      height: 50px;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            text-transform: uppercase;
-            padding: 8px 12px;
-            transition: color 0.3s ease-in-out;
-        }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      transition: color 0.3s ease-in-out;
+    }
 
-        nav a:hover {
-            color: black;
-        }
+    nav a:hover {
+      color: gold;
+    }
 
-        /* Contact Section */
-        .contact-wrapper {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            padding: 100px 10% 60px;
-            background: white;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
+    /* Contact Section */
+    .contact-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 100px 10% 60px;
+      background: white;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
 
-        .contact-left {
-            flex: 1;
-            min-width: 280px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    .contact-left {
+      flex: 1;
+      min-width: 280px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-        .contact-left p {
-            margin-bottom: 15px;
-        }
+    .contact-left p {
+      margin-bottom: 15px;
+    }
 
-        .contact-form {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .contact-form {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-        .contact-form label {
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    .contact-form label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
-        .contact-form input, 
-        .contact-form textarea {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #999;
-            border-radius: 4px;
-            background: #fff;
-        }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      background: #fff;
+    }
 
-        .contact-form textarea {
-            height: 120px;
-            resize: none;
-        }
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
 
-        .contact-form button {
-            margin-top: 10px;
-            padding: 12px;
-            font-size: 16px;
-            background: black;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s ease-in-out;
-        }
+    .contact-form button {
+      margin-top: 10px;
+      padding: 12px;
+      font-size: 16px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease-in-out;
+    }
 
-        .contact-form button:hover {
-            background: white;
-            color: black;
-            border: 2px solid black;
-        }
+    .contact-form button:hover {
+      background: white;
+      color: black;
+      border: 2px solid black;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .contact-wrapper {
-                flex-direction: column;
-                padding: 80px 20px 40px;
-            }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+        padding: 80px 20px 40px;
+      }
 
-            .hero-text {
-                font-size: 42px;
-                padding: 0 10px;
-            }
+      .hero-text {
+        font-size: 42px;
+        padding: 0 10px;
+      }
 
-            nav ul {
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.8);
-                position: absolute;
-                top: 100%;
-                right: 0;
-                display: none;
-            }
-        }
-    </style>
+      nav ul {
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Hero Section with Video -->
+  <div class="hero-section">
+    <div class="video-background">
+      <iframe
+        src="https://www.youtube.com/embed/dcWjEq5Jlvo?autoplay=1&mute=1&loop=1&playlist=dcWjEq5Jlvo&controls=0&showinfo=0&modestbranding=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <header>
+      <img
+        src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg"
+        alt="Logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mls.html">Listings</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="hero-text">Contact Us</div>
+  </div>
 
-    <!-- Hero Section with Video -->
-    <div class="hero-section">
-        <div class="video-background">
-            <iframe 
-                src="https://www.youtube.com/embed/dcWjEq5Jlvo?autoplay=1&mute=1&loop=1&playlist=dcWjEq5Jlvo&controls=0&showinfo=0&modestbranding=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-            </iframe>
-        </div>
-        <header>
-            <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="mls.html">Listings</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="hero-text">
-            Contact Us
-        </div>
+  <!-- Contact Info + Form -->
+  <div class="contact-wrapper">
+    <div class="contact-left">
+      <p>
+        Reach out to us today for personalized assistance and expert guidance
+        in your real estate journey. We’re here to find your dream home!
+      </p>
+      <p><strong>Direct Office:</strong> 904-705-8801</p>
+      <p><strong>Main Office:</strong> 904-701-3035</p>
+      <p><strong>Email:</strong> dmilledge2@gmail.com</p>
     </div>
 
-    <!-- Contact Info + Form -->
-    <div class="contact-wrapper">
-        <div class="contact-left">
-            <p>
-                Reach out to us today for personalized assistance and expert guidance in your real estate journey. We’re here to find your dream home!
-            </p>
-            <p><strong>Phone:</strong> 904-705-8801</p>
-            <p><strong>Office:</strong> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
-            <p><strong>Email:</strong> darryl@sunshinerealtyandco.com</p>
-        </div>
-
-        <form class="contact-form">
-            <label>Your Name:</label>
-            <input type="text" name="name" required>
-            <label>Your Email:</label>
-            <input type="email" name="email" required>
-            <label>Message:</label>
-            <textarea name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
+    <form class="contact-form">
+      <label>Your Name:</label>
+      <input type="text" name="name" required />
+      <label>Your Email:</label>
+      <input type="email" name="email" required />
+      <label>Message:</label>
+      <textarea name="message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
+
