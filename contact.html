@@ -6,10 +6,7 @@
   <title>Contact Us</title>
 
   <!-- FontAwesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
   <style>
     * {
@@ -25,12 +22,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Hero Section */
@@ -73,75 +66,74 @@
       text-align: center;
     }
 
-     /* Header & Navbar */
-     header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: #000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-        }
+    /* Header & Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
 
-        header img {
-            height: 60px;
-            object-fit: contain;
-        }
+    header img {
+      height: 60px;
+      object-fit: contain;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        nav li {
-            position: relative;
-        }
+    nav li {
+      position: relative;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #FFF;
-            font-size: 16px;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
+    nav a {
+      text-decoration: none;
+      color: #FFF;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
 
-        nav a:hover {
-            color: #ccc;
-        }
+    nav a:hover {
+      color: #ccc;
+    }
 
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
 
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: black;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      min-width: 160px;
+      z-index: 20;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: black;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            min-width: 160px;
-            z-index: 20;
-        }
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      text-align: left;
+      color: #FFF;
+    }
 
-        .dropdown-content a {
-            display: block;
-            padding: 12px;
-            text-align: left;
-            color: #FFF;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-			color: #ccc;
-        }
+    .dropdown:hover .dropdown-content {
+      display: block;
+      color: #ccc;
+    }
 
     /* Contact Section */
     .contact-wrapper {
@@ -154,20 +146,18 @@
       gap: 40px;
     }
 
-    .contact-left {
+    .contact-left, .contact-form, .contact-image {
       flex: 1;
       min-width: 280px;
-      font-size: 18px;
-      line-height: 1.6;
     }
 
     .contact-left p {
+      font-size: 18px;
+      line-height: 1.6;
       margin-bottom: 15px;
     }
 
     .contact-form {
-      flex: 1;
-      min-width: 280px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -210,6 +200,12 @@
       border: 2px solid black;
     }
 
+    .contact-image img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .contact-wrapper {
@@ -246,42 +242,46 @@
       ></iframe>
     </div>
     <header>
-      <img
-        src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg"
-        alt="Logo"
-      />
+      <img src="https://raw.githubusercontent.com/akirahardy/DM-Website/refs/heads/main/DM-logo.jpeg" alt="Logo" />
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li class="dropdown">
-              <a href="resources.html">Resources</a>
-              <div class="dropdown-content">
-                  <a href="buyers.html">Buyers</a>
-                  <a href="sellers.html">Sellers</a>
-                  <a href="investors.html">Investors</a>
-              </div>
+            <a href="resources.html">Resources</a>
+            <div class="dropdown-content">
+              <a href="buyers.html">Buyers</a>
+              <a href="sellers.html">Sellers</a>
+              <a href="investors.html">Investors</a>
+            </div>
           </li>
           <li><a href="listings.html">Listings</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
-      </ul>
-  </nav>
-
+        </ul>
+      </nav>
     </header>
     <div class="hero-text">Contact Us</div>
   </div>
 
-  <!-- Contact Info + Form -->
+  <!-- Contact Info + Form + Image -->
   <div class="contact-wrapper">
     <div class="contact-left">
-      <p>
-        Reach out to us today for personalized assistance and expert guidance
-        in your real estate journey. We’re here to find your dream home!
-      </p>
+      <p>Reach out to us today for personalized assistance and expert guidance in your real estate journey. We’re here to find your dream home!</p>
       <p><strong>Phone:</strong> 904-705-8801</p>
       <p><strong>Office:</strong> 1354 N Laura St, Suite 101, Jacksonville, FL, 32206</p>
       <p><strong>Email:</strong> darryl@sunshinerealtyandco.com</p>
+      <div style="margin-top: 20px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.329940364968!2d-81.65307822448261!3d30.339897806518914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b77db262c891%3A0x6c4c3cb196ac1b83!2s1354%20N%20Laura%20St%2C%20Jacksonville%2C%20FL%2032206!5e0!3m2!1sen!2sus!4v1712034870849!5m2!1sen!2sus"
+          width="100%"
+          height="300"
+          style="border:0; border-radius: 10px; margin-top: 10px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
 
     <form class="contact-form">
@@ -293,10 +293,20 @@
       <textarea name="message" required></textarea>
       <button type="submit">Submit</button>
     </form>
+
+    <div class="contact-image">
+      <img src="PBD02222-Edit.jpeg" alt="Portrait" />
+    </div>
   </div>
-   <!-- Footer -->
-	<footer>
+
+  <!-- Footer -->
+  <footer style="background: black; color: white; text-align: center; padding: 20px 0;">
     <p>&copy; 2025 HomesByMilledge. All rights reserved.</p>
-</footer>
+    <div style="margin-top: 10px;">
+      <a href="https://www.instagram.com/mr_dee2you/?igsh=ZzZvMDVsaDV6bzBj" target="_blank" style="margin: 0 10px; color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/darryl.milledge2?mibextid=wwXIfr" target="_blank" style="margin: 0 10px; color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+      <a href="https://linkedin.com" target="_blank" style="margin: 0 10px; color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
